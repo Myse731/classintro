@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #f4f9ff;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.16),
+      transparent 22%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(173, 216, 230, 0.22),
+      transparent 20%
+    ),
+    linear-gradient(135deg, #0f3756, #185e82 35%, #59a6c8 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(255, 255, 255, 0.22),
+      transparent 18%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(209, 243, 255, 0.14),
+      transparent 18%
+    ),
+    radial-gradient(
+      circle at 50% 95%,
+      rgba(255, 255, 255, 0.12),
+      transparent 22%
+    );
+  pointer-events: none;
+  opacity: 0.95;
+}
+
+h1 {
+  text-align: center;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  letter-spacing: 0.12em;
+  margin-bottom: 1.75rem;
+  text-shadow: 0 12px 40px rgba(0, 0, 0, 0.26);
+  line-height: 1.05;
+}
+
+.Student-container {
+  width: min(100%, 760px);
+  display: grid;
+  gap: 1.75rem;
+  place-items: center;
+  padding: 0 0.5rem;
+}
+
+.Student {
+  width: 100%;
+  padding: 2.2rem 2.2rem 2rem;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  color: #eaf6ff;
+  overflow: hidden;
+  position: relative;
+}
+
+.Student::before,
+.Student::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.Student::before {
+  inset: 0;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.22),
+    transparent 55%
+  );
+  mix-blend-mode: screen;
+}
+
+.Student::after {
+  width: 180px;
+  height: 180px;
+  top: -40px;
+  right: -40px;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.28),
+    transparent 55%
+  );
+}
+
+.Student h2 {
+  font-size: 2rem;
+  margin-bottom: 0.85rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  position: relative;
+  z-index: 1;
+}
+
+.Student p {
+  font-size: 1rem;
+  line-height: 1.9;
+  opacity: 0.92;
+  position: relative;
+  z-index: 1;
+}
+
+.Student p + p {
+  margin-top: 0.88rem;
+}
+
+.Student p::before {
+  content: "•";
+  color: rgba(255, 255, 255, 0.8);
+  margin-right: 0.75rem;
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+
+.Student p {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+@media (max-width: 520px) {
+  body {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2.6rem;
+  }
+
+  .Student {
+    padding: 1.8rem 1.8rem 1.5rem;
+  }
+
+  .Student h2 {
+    font-size: 1.8rem;
+  }
+}
